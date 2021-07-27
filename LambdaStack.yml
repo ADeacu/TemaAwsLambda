@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Resources:
+  APIFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: LambdaStack
+      RunTime: python3.7
+      Handler: LambdaFunction
+      Code:
+        S3Bucket: andreilambdabucket
+        S3Key: LambdaFunction.zip
+      Handler: 'LambdaFunct.main.lambda'
+      Runtime: python3.7
+      Role: arn:aws:s3:::andreilambdabucket
